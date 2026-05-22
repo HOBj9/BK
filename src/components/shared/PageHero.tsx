@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { easePremium } from '@/constants/animations';
+import { easePremium, scrollRevealVariants, scrollViewport } from '@/constants/animations';
 import Container from '@/components/ui/Container';
 
 export type PageHeroProps = {
@@ -26,8 +26,10 @@ export default function PageHero({ title, description, children }: PageHeroProps
 
       <Container className="relative">
         <motion.div
-          initial={{ y: 16 }}
-          animate={{ y: 0, opacity: 1 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ ...scrollViewport, once: true }}
+          variants={scrollRevealVariants.fadeUp}
           transition={{ duration: 0.65, ease: easePremium }}
           className="max-w-3xl"
         >

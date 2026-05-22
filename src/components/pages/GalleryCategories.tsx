@@ -1,5 +1,8 @@
+import { motion } from 'framer-motion';
 import LazyImage from '@/components/ui/LazyImage';
+import StaggerReveal from '@/components/ui/StaggerReveal';
 import SectionHeading from '@/components/shared/SectionHeading';
+import { staggerItem } from '@/constants/animations';
 import { SkeletonGalleryItem } from '@/components/skeletons';
 import { usePageLoading } from '@/context/PageLoadContext';
 import { useCardReveal } from '@/hooks/useCardReveal';
@@ -66,11 +69,13 @@ export default function GalleryCategories({ categories }: GalleryCategoriesProps
       {groups.map((group) => (
         <div key={group.title}>
           <SectionHeading title={group.title} align="left" />
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerReveal className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {group.images.map(({ img, index }) => (
-              <GalleryImageCard key={img.image} img={img} index={index} />
+              <motion.div key={img.image} variants={staggerItem}>
+                <GalleryImageCard img={img} index={index} />
+              </motion.div>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       ))}
     </>

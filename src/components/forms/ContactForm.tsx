@@ -124,10 +124,9 @@ export default function ContactForm({ compact = false }) {
             className={inputClass}
           >
             <option value="">Sélectionnez un service</option>
+            <option value="nettoyage-drains">Nettoyage des drains</option>
             <option value="debouchage">Débouchage</option>
-            <option value="urgence">Plomberie d&apos;urgence</option>
-            <option value="inspection">Inspection caméra</option>
-            <option value="canalisation">Canalisation</option>
+            <option value="urgence">Urgence 24/7</option>
             <option value="autre">Autre</option>
           </select>
         </div>

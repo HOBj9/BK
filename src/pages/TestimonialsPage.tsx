@@ -1,6 +1,6 @@
 import { PageShell } from '@/components/pages';
 import { SkeletonTestimonialsPage } from '@/components/skeletons';
-import Testimonials from '@/sections/Testimonials';
+import TestimonialsExperience from '@/sections/testimonials/TestimonialsExperience';
 import { testimonialsPage } from '@/data/websiteContent';
 import { ROUTES } from '@/constants/routes';
 import { pageBreadcrumb, seoTitle } from '@/utils/pageMeta';
@@ -11,16 +11,14 @@ export default function TestimonialsPage() {
       skeleton={<SkeletonTestimonialsPage />}
       seo={{
         title: seoTitle('Témoignages'),
-        description: testimonialsPage.sections[0]?.description,
+        description:
+          testimonialsPage.sections[0]?.description ??
+          'Avis et témoignages clients BK Entretien — plomberie et débouchage à Montréal.',
         path: ROUTES.TESTIMONIALS,
       }}
       breadcrumb={pageBreadcrumb('Témoignages', ROUTES.TESTIMONIALS)}
-      hero={{
-        title: 'Témoignages',
-        description: 'Ce que disent nos clients à Montréal et environs.',
-      }}
     >
-      <Testimonials standalone />
+      <TestimonialsExperience />
     </PageShell>
   );
 }

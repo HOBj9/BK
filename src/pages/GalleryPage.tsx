@@ -1,5 +1,6 @@
-import { PageShell, PageSection, GalleryCategories } from '@/components/pages';
+import { PageShell } from '@/components/pages';
 import { SkeletonGalleryPage } from '@/components/skeletons';
+import GalleryExperience from '@/sections/gallery/GalleryExperience';
 import { photoGalleryPage } from '@/data/websiteContent';
 import { ROUTES } from '@/constants/routes';
 import { pageBreadcrumb, seoTitle } from '@/utils/pageMeta';
@@ -16,11 +17,8 @@ export default function GalleryPage() {
         path: ROUTES.GALLERY,
       }}
       breadcrumb={pageBreadcrumb('Galerie', ROUTES.GALLERY)}
-      hero={{ title: page.title, description: page.description }}
     >
-      <PageSection containerClassName="space-y-16">
-        <GalleryCategories categories={page.sections} />
-      </PageSection>
+      <GalleryExperience page={page} />
     </PageShell>
   );
 }

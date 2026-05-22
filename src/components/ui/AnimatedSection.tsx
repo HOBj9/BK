@@ -1,6 +1,6 @@
 import type { ElementType, ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import { fadeInUp } from '../../constants/animations';
+import ScrollReveal from './ScrollReveal';
+import type { ScrollRevealVariant } from '@/constants/animations';
 
 type AnimatedSectionProps = {
   children: ReactNode;
@@ -8,25 +8,23 @@ type AnimatedSectionProps = {
   delay?: number;
   id?: string;
   as?: ElementType;
+  variant?: ScrollRevealVariant;
 };
 
+/** Section wrapper with scroll-triggered reveal */
 export default function AnimatedSection({
   children,
   className = '',
   delay = 0,
   id,
   as: Tag = 'section',
+  variant = 'fadeUp',
 }: AnimatedSectionProps) {
   return (
     <Tag id={id} className={className}>
-      <motion.div
-        initial={fadeInUp.initial}
-        whileInView={fadeInUp.whileInView}
-        viewport={fadeInUp.viewport}
-        transition={{ ...fadeInUp.transition, delay }}
-      >
+      <ScrollReveal variant={variant} delay={delay}>
         {children}
-      </motion.div>
+      </ScrollReveal>
     </Tag>
   );
 }

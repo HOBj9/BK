@@ -1,0 +1,23 @@
+.footer-shell {
+  border-top: 1px solid rgb(51 65 85 / 0.55);
+  background: linear-gradient(180deg, rgb(15 23 42) 0%, rgb(8 47 73) 55%, rgb(8 47 73) 100%);
+}
+
+.footer-cta-band {
+  border-bottom: 1px solid rgb(51 65 85 / 0.45);
+  background: linear-gradient(
+    90deg,
+    rgb(220 38 38 / 0.12) 0%,
+    rgb(14 165 233 / 0.08) 50%,
+    rgb(220 38 38 / 0.12) 100%
+  );
+}
+
+.footer-link {
+  color: rgb(148 163 184);
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: rgb(255 255 255);
+}

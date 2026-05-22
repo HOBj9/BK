@@ -3,6 +3,7 @@ import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
 import SectionHeading from '../components/shared/SectionHeading';
 import WelcomeGalleryItem from './WelcomeGalleryItem';
+import { homeGalleryPreview } from '@/data/gallery';
 import { homePage } from '../data/websiteContent';
 import { staggerContainer } from '../constants/animations';
 import { ROUTES } from '../constants/routes';
@@ -22,9 +23,9 @@ export default function PhotoGallery() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-60px' }}
-          className="grid grid-cols-2 gap-6 md:grid-cols-4"
+          className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4"
         >
-          {homePage.galleryImages.map((item, index) => (
+          {homeGalleryPreview.map((item, index) => (
             <WelcomeGalleryItem key={item.image} item={item} index={index} />
           ))}
         </motion.div>

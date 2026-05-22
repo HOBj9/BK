@@ -1,0 +1,67 @@
+/* Débouchage — urgency / emergency aesthetic (not drain teal theme) */
+
+.unlock-page-bg {
+  background:
+    radial-gradient(ellipse 100% 70% at 80% 0%, rgba(239, 68, 68, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 50% at 0% 100%, rgba(249, 115, 22, 0.05) 0%, transparent 45%),
+    linear-gradient(180deg, rgb(248 250 252) 0%, rgb(241 245 249) 100%);
+}
+
+.dark .unlock-page-bg {
+  background:
+    radial-gradient(ellipse 100% 70% at 80% 0%, rgba(239, 68, 68, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, rgb(15 23 42) 0%, rgb(8 12 22) 100%);
+}
+
+.unlock-urgency-divider {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(239, 68, 68, 0.6) 20%,
+    rgba(249, 115, 22, 0.8) 50%,
+    rgba(239, 68, 68, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.unlock-card-glow {
+  box-shadow:
+    0 0 0 1px rgba(239, 68, 68, 0.15),
+    0 16px 48px -12px rgba(220, 38, 38, 0.18);
+}
+
+.unlock-image-frame {
+  box-shadow:
+    0 0 0 2px rgba(239, 68, 68, 0.25),
+    0 24px 60px -16px rgba(15, 23, 42, 0.35);
+}
+
+@keyframes unlock-pulse-ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+.unlock-pulse-dot {
+  animation: unlock-pulse-ring 2s ease-in-out infinite;
+}
+
+@keyframes unlock-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.unlock-scan-line {
+  animation: unlock-scan 3.5s ease-in-out infinite;
+}

@@ -5,15 +5,8 @@ import Breadcrumb from '@/components/navigation/Breadcrumb';
 import PageHero from '@/components/shared/PageHero';
 import { PageLoadContext } from '@/context/PageLoadContext';
 import { usePageLoad } from '@/hooks/usePageLoad';
-import { easePremium } from '@/constants/animations';
+import { pageTransition } from '@/constants/animations';
 import type { BreadcrumbItem, SEOProps } from '@/types';
-
-const pageFade = {
-  initial: { opacity: 0, y: 12 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -8 },
-  transition: { duration: 0.4, ease: easePremium },
-};
 
 type PageHeroConfig = {
   title: string;
@@ -42,11 +35,11 @@ export default function PageShell({ seo, breadcrumb, hero, children, skeleton, h
       <SEO {...seo} />
       <AnimatePresence mode="wait">
         {isLoading && skeleton ? (
-          <motion.div key="skeleton" {...pageFade}>
+          <motion.div key="skeleton" {...pageTransition}>
             {skeleton}
           </motion.div>
         ) : (
-          <motion.div key="content" {...pageFade}>
+          <motion.div key="content" {...pageTransition}>
             {!home && breadcrumb && breadcrumb.length > 0 && <Breadcrumb items={breadcrumb} />}
             {!home && hero && (
               <PageHero title={hero.title} description={hero.description}>

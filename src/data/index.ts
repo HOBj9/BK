@@ -17,3 +17,10 @@ export {
   navSections,
 } from './websiteContent';
 export { galleryCategories, allGalleryImages, homeGalleryPreview } from './gallery';
+export {
+  API_MEDIA_BASE,
+  pageBanners,
+  pageMains,
+  homeCarouselImages,
+  trustStripImages,
+} from './media';

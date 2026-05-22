@@ -1,0 +1,46 @@
+/* Témoignages — warm, calm, trust-focused */
+
+.testimonial-page-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(251, 191, 36, 0.06) 0%, transparent 55%),
+    linear-gradient(180deg, rgb(255 251 235) 0%, rgb(248 250 252) 35%, rgb(241 245 249) 100%);
+}
+
+.dark .testimonial-page-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(251, 191, 36, 0.05) 0%, transparent 55%),
+    linear-gradient(180deg, rgb(20 18 15) 0%, rgb(15 23 42) 40%, rgb(12 18 28) 100%);
+}
+
+.testimonial-card-warm {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 251, 235, 0.95) 100%
+  );
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 12px 32px -8px rgba(180, 140, 60, 0.12);
+}
+
+.dark .testimonial-card-warm {
+  background: linear-gradient(
+    145deg,
+    rgba(30, 35, 48, 0.95) 0%,
+    rgba(24, 28, 38, 0.9) 100%
+  );
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 12px 32px -8px rgba(0, 0, 0, 0.35);
+}
+
+.testimonial-spotlight {
+  box-shadow:
+    0 0 0 1px rgba(251, 191, 36, 0.2),
+    0 24px 48px -12px rgba(180, 120, 40, 0.18);
+}
+
+.testimonial-quote-mark {
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1;
+}

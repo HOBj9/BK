@@ -1,4 +1,4 @@
-import { ROUTES } from '../constants/routes';
+import { ROUTES, hashPath, ANCHORS } from '../constants/routes';
 import { homePage, siteSettings } from './websiteContent';
 
 export const site = {
@@ -10,10 +10,18 @@ export const site = {
   phoneDisplay: siteSettings.companyPhone,
   email: siteSettings.companyEmail,
   address: siteSettings.companyAddress,
-  hours: `Lun–Ven ${siteSettings.hoursOpen}–${siteSettings.hoursClose} · Urgence 24/7`,
+  serviceArea: siteSettings.serviceArea,
+  hoursSchedule: {
+    weekdays: siteSettings.hoursWeekdays,
+    saturday: siteSettings.hoursSaturday,
+    sunday: siteSettings.hoursSunday,
+    emergency: siteSettings.hoursEmergency,
+  },
+  /** One-line hours for cards & compact UI */
+  hours: `${siteSettings.hoursWeekdays} · ${siteSettings.hoursEmergency}`,
   hoursDetail: siteSettings.hoursNote,
   founded: '2006',
-  url: 'https://bkdebouchage.ca',
+  url: siteSettings.companyUrl,
   social: {
     facebook: siteSettings.socialFacebook,
     twitter: siteSettings.socialTwitter,
@@ -32,20 +40,16 @@ export const navLinks = [
 
 export const footerLinks = {
   services: [
-    { label: 'Nettoyage des drains', path: ROUTES.DRAIN_CLEANING },
-    { label: 'Débouchage', path: ROUTES.UNLOCKING },
+    { label: 'Nettoyage des drains et égouts', path: ROUTES.DRAIN_CLEANING },
+    { label: 'Débouchage d\'urgence', path: ROUTES.UNLOCKING },
     { label: 'Galerie photo', path: ROUTES.GALLERY },
-    { label: 'Tous les services', path: ROUTES.SERVICES },
   ],
-  pages: [
-    { label: 'Accueil', path: ROUTES.HOME },
-    { label: 'Témoignages', path: ROUTES.TESTIMONIALS },
-    { label: 'Galerie', path: ROUTES.GALLERY },
-    { label: 'Contact', path: ROUTES.CONTACT },
-  ],
-  company: [
-    { label: 'Nettoyage drains', path: ROUTES.DRAIN_CLEANING },
-    { label: 'Débouchage', path: ROUTES.UNLOCKING },
-    { label: 'Contact', path: ROUTES.CONTACT },
+  navigation: navLinks,
+  accueil: [
+    { label: 'Nos services', path: hashPath(ANCHORS.SERVICES) },
+    { label: 'Pourquoi nous choisir', path: hashPath(ANCHORS.WHY_US) },
+    { label: 'Zones desservies', path: hashPath(ANCHORS.ZONES) },
+    { label: 'FAQ', path: hashPath(ANCHORS.FAQ) },
+    { label: 'Témoignages', path: hashPath(ANCHORS.TESTIMONIALS) },
   ],
 };

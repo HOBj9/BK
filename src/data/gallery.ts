@@ -1,14 +1,26 @@
-import { homePage, photoGalleryPage } from './websiteContent';
+import {
+  allProjectPhotos,
+  galleryCategoriesData,
+  homeCarouselImages,
+} from './media';
+import type { GalleryCategory } from '@/types';
 
-export { photoGalleryPage as gallery, homePage };
+export { homePage, photoGalleryPage } from './websiteContent';
 
-export const galleryCategories = photoGalleryPage.sections;
+export const galleryCategories: GalleryCategory[] = galleryCategoriesData.map((cat) => ({
+  title: cat.title,
+  images: [...cat.images],
+}));
 
-export const allGalleryImages = photoGalleryPage.sections.flatMap((category) =>
+export const allGalleryImages = galleryCategories.flatMap((category) =>
   category.images.map((img) => ({
     ...img,
     category: category.title,
   })),
 );
 
-export const homeGalleryPreview = homePage.galleryImages;
+/** Home carousel & preview — 12 images (field photos + portfolio) */
+export const homeGalleryPreview = homeCarouselImages;
+
+/** All 8 standard portfolio shots */
+export { allProjectPhotos };

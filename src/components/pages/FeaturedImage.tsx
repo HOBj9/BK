@@ -1,4 +1,5 @@
 import LazyImage from '@/components/ui/LazyImage';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import Skeleton from '@/components/ui/Skeleton';
 import { usePageLoading } from '@/context/PageLoadContext';
 import { useCardReveal } from '@/hooks/useCardReveal';
@@ -35,8 +36,9 @@ export default function FeaturedImage({
   }
 
   return (
+    <ScrollReveal variant="scaleUp" delay={revealDelay / 1000} className={className}>
     <div
-      className={['overflow-hidden rounded-2xl shadow-xl', className].filter(Boolean).join(' ')}
+      className="overflow-hidden rounded-2xl shadow-xl"
     >
       <LazyImage
         src={src}
@@ -52,5 +54,6 @@ export default function FeaturedImage({
         </p>
       )}
     </div>
+    </ScrollReveal>
   );
 }
