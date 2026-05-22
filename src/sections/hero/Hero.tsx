@@ -1,34 +1,17 @@
 import { motion } from 'framer-motion';
-import { Zap } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import { getPhoneHref } from '@/utils/phone';
 import { heroConfig } from './hero.config';
 import HeroBackground from './HeroBackground';
-import HeroDashboard from './HeroDashboard';
-import HeroStats from './HeroStats';
+import HeroTechnician from './HeroTechnician';
 import HeroEmergencyButton from './HeroEmergencyButton';
 import HeroGlassButton from './HeroGlassButton';
-import {
-  heroCheckItem,
-  heroLineReveal,
-  heroStagger,
-  heroFadeUp,
-} from './HeroAnimations';
+import { heroFadeUp, heroLineReveal, heroStagger } from './HeroAnimations';
 import './hero.css';
 
 export default function Hero() {
-  const {
-    eyebrow,
-    headlineLines,
-    headlineAccent,
-    subheadline,
-    phone,
-    primaryCta,
-    secondaryCta,
-    trustItems,
-  } = heroConfig;
-
-  const phoneHref = getPhoneHref(phone);
+  const { eyebrow, headline, subheadline, primaryCta, secondaryCta, trustLine } = heroConfig;
+  const phoneHref = getPhoneHref(heroConfig.phone);
 
   return (
     <section
@@ -37,79 +20,54 @@ export default function Hero() {
     >
       <HeroBackground />
 
-      <Container className="relative z-10 flex min-h-svh flex-col justify-center py-24 sm:py-28 lg:py-32">
-        <div className="grid w-full items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 xl:gap-14">
-          {/* LEFT — Typography & CTAs */}
+      <Container className="relative z-10 flex min-h-svh items-center py-24 sm:py-28 lg:py-20">
+        <div className="grid w-full items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <motion.div
             variants={heroStagger}
             initial="hidden"
             animate="show"
-            className="max-w-2xl"
+            className="max-w-xl text-center lg:text-left"
           >
-            <motion.div variants={heroFadeUp} className="ribbon-emergency mb-6 w-fit shadow-emergency-600/40">
-              <Zap className="h-3.5 w-3.5" aria-hidden />
+            <motion.p
+              variants={heroFadeUp}
+              className="mb-5 inline-flex items-center rounded-full border border-brand-400/30 bg-brand-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-200"
+            >
               {eyebrow}
-            </motion.div>
+            </motion.p>
 
-            <h1 id="hero-heading" className="space-y-1">
-              {headlineLines.map((line) => (
-                <motion.span
-                  key={line}
-                  variants={heroLineReveal}
-                  className="block text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-6xl"
-                >
-                  {line}
-                </motion.span>
-              ))}
-              <motion.span
-                variants={heroLineReveal}
-                className="mt-2 block bg-linear-to-r from-brand-300 via-brand-400 to-cyan-300 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl lg:text-5xl"
-              >
-                {headlineAccent}
-              </motion.span>
-            </h1>
+            <motion.h1
+              id="hero-heading"
+              variants={heroLineReveal}
+              className="text-balance text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-6xl"
+            >
+              {headline}
+            </motion.h1>
 
             <motion.p
               variants={heroFadeUp}
-              className="mt-6 max-w-xl text-base leading-relaxed text-slate-300/95 sm:text-lg lg:text-xl"
+              className="mt-5 text-base leading-relaxed text-slate-300/90 sm:text-lg"
             >
               {subheadline}
             </motion.p>
 
-            <motion.ul
-              variants={heroStagger}
-              className="mt-8 grid gap-2.5 sm:grid-cols-2"
-              aria-label="Garanties de service"
+            <motion.p
+              variants={heroFadeUp}
+              className="mt-4 text-sm font-medium text-slate-400"
             >
-              {trustItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <motion.li
-                    key={item.text}
-                    variants={heroCheckItem}
-                    className="flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-slate-200 backdrop-blur-sm"
-                  >
-                    <Icon className="h-4 w-4 shrink-0 text-brand-400" aria-hidden />
-                    <span>{item.text}</span>
-                  </motion.li>
-                );
-              })}
-            </motion.ul>
+              {trustLine}
+            </motion.p>
 
             <motion.div
               variants={heroFadeUp}
-              className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center"
+              className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start"
             >
               <HeroEmergencyButton href={phoneHref}>{primaryCta.label}</HeroEmergencyButton>
               <HeroGlassButton to={secondaryCta.to}>{secondaryCta.label}</HeroGlassButton>
             </motion.div>
           </motion.div>
 
-          {/* RIGHT — Dashboard */}
-          <HeroDashboard className="w-full max-w-xl justify-self-center lg:max-w-none lg:justify-self-end" />
+          <HeroTechnician />
         </div>
-
-        <HeroStats />
       </Container>
     </section>
   );

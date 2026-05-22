@@ -1,107 +1,51 @@
-/* Premium cinematic hero — BK Entretien */
+/* Hero — minimal, elegant */
 
 .hero-display {
   font-family: 'Outfit', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.03em;
-}
-
-.hero-text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #7dd3fc 45%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero-text-accent {
-  background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 50%, #7dd3fc 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  letter-spacing: -0.02em;
 }
 
 .hero-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.35;
+  opacity: 0.25;
   mix-blend-mode: overlay;
-}
-
-.hero-glow-ring {
-  box-shadow:
-    0 0 0 1px rgba(56, 189, 248, 0.25),
-    0 0 40px rgba(14, 165, 233, 0.2),
-    0 0 80px rgba(239, 68, 68, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .hero-emergency-glow {
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.15),
-    0 8px 32px rgba(220, 38, 38, 0.45),
-    0 0 60px rgba(239, 68, 68, 0.35);
-}
-
-.hero-dashboard-panel {
-  background: linear-gradient(
-    145deg,
-    rgba(8, 47, 73, 0.75) 0%,
-    rgba(12, 74, 110, 0.55) 40%,
-    rgba(15, 23, 42, 0.65) 100%
-  );
-  backdrop-filter: blur(24px) saturate(1.4);
-}
-
-.hero-stat-glow:hover {
-  box-shadow:
-    0 0 0 1px rgba(56, 189, 248, 0.35),
-    0 12px 40px rgba(14, 165, 233, 0.15);
-}
-
-.hero-pipe-line {
-  stroke: url(#heroPipeGradient);
-  stroke-width: 1;
-  fill: none;
-  opacity: 0.35;
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 8px 28px rgba(220, 38, 38, 0.4),
+    0 0 48px rgba(239, 68, 68, 0.25);
 }
 
 .hero-grid-animated {
-  background-size: 64px 64px;
+  background-size: 72px 72px;
   background-image:
-    linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%);
+    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 40%, black 15%, transparent 70%);
 }
 
-@keyframes hero-energy-flow {
-  0% {
-    stroke-dashoffset: 120;
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.55;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 0.2;
-  }
+/* Technician figure */
+.hero-figure-glow {
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 55%,
+    rgba(56, 189, 248, 0.35) 0%,
+    rgba(14, 165, 233, 0.12) 45%,
+    transparent 70%
+  );
+  filter: blur(28px);
 }
 
-.hero-energy-line {
-  animation: hero-energy-flow 4s ease-in-out infinite;
+.hero-figure-img {
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45));
+  -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
 }
 
-@keyframes hero-particle-drift {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.3;
+@media (min-width: 1024px) {
+  .hero-figure-img {
+    -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
   }
-  50% {
-    transform: translate(12px, -18px) scale(1.2);
-    opacity: 0.7;
-  }
-}
-
-.hero-particle {
-  animation: hero-particle-drift var(--dur, 6s) ease-in-out infinite;
-  animation-delay: var(--delay, 0s);
 }

@@ -38,7 +38,6 @@ export const homePage = {
       title: 'Nettoyage & débouchage experts',
       description:
         'Équipe qualifiée pour drains résidentiels et commerciaux — diagnostic rapide et intervention efficace.',
-      image: homeSectionImages.expertise,
     },
     {
       title: "Urgence 24/7",

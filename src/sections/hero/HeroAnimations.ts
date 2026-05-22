@@ -87,12 +87,12 @@ export const heroCheckItem: Variants = {
   },
 };
 
-export const dashboardCard: Variants = {
-  hidden: { opacity: 0, y: 32, rotateX: 8 },
+export const heroFigureIn: Variants = {
+  hidden: { opacity: 0, y: 28, scale: 0.96 },
   show: {
     opacity: 1,
     y: 0,
-    rotateX: 0,
-    transition: { duration: 0.85, ease: heroEase, delay: 0.25 },
+    scale: 1,
+    transition: { duration: 0.9, ease: heroEase, delay: 0.2 },
   },
 };
