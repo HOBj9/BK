@@ -17,26 +17,26 @@ export default function CityPageBody({ city }) {
               <MapPin className="h-6 w-6" aria-hidden />
               <span className="font-semibold">{city.region}</span>
             </div>
-            <h2 className="text-2xl font-bold text-slate-900">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Pourquoi choisir BK Débouchage à {city.name} ?
             </h2>
             <ul className="mt-6 space-y-4">
               {city.highlights.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-slate-600">
+                <li key={item} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" aria-hidden />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <h3 className="mt-10 text-xl font-bold text-slate-900">
+            <h3 className="mt-10 text-xl font-bold text-slate-900 dark:text-slate-100">
               Services disponibles à {city.name}
             </h3>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {city.services.map((s) => (
                 <li
                   key={s}
-                  className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700"
+                  className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 dark:border-slate-600 dark:bg-slate-800/60 dark:text-slate-300"
                 >
                   {s}
                 </li>
@@ -45,10 +45,10 @@ export default function CityPageBody({ city }) {
           </article>
 
           <Card hover={false}>
-            <h3 className="text-lg font-bold text-slate-900">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
               Demande d&apos;intervention à {city.name}
             </h3>
-            <p className="mt-2 text-sm text-slate-600">
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
               Décrivez votre problème — nous vous rappelons rapidement.
             </p>
             <div className="mt-6">
@@ -58,7 +58,7 @@ export default function CityPageBody({ city }) {
         </div>
 
         <div className="mt-16">
-          <h3 className="text-xl font-bold text-slate-900">Tous nos services</h3>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">Tous nos services</h3>
           <nav
             aria-label="Services disponibles"
             className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
@@ -67,7 +67,7 @@ export default function CityPageBody({ city }) {
               <Link
                 key={service.slug}
                 to={ROUTES.SERVICE(service.slug)}
-                className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-brand-300 hover:text-brand-800"
+                className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-brand-300 hover:text-brand-800 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-300 dark:hover:border-brand-500 dark:hover:text-brand-200"
               >
                 {service.title}
               </Link>

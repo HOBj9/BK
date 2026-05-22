@@ -22,7 +22,7 @@ export default function FAQItem({ question, answer, index = 0 }) {
     <article
       className={`card-premium overflow-hidden transition-all duration-500 ${
         open
-          ? 'border-brand-300/50 shadow-lg shadow-brand-900/8'
+          ? 'border-brand-300/50 shadow-lg shadow-brand-900/8 dark:border-brand-500/40 dark:shadow-brand-900/20'
           : 'card-premium-hover'
       }`}
     >
@@ -32,7 +32,7 @@ export default function FAQItem({ question, answer, index = 0 }) {
         className="flex w-full items-center justify-between gap-4 px-7 py-6 text-left focus-ring rounded-2xl"
         aria-expanded={open}
       >
-        <span className="pr-4 text-base font-semibold text-slate-900 sm:text-lg">
+        <span className="pr-4 text-base font-semibold text-slate-900 dark:text-slate-100 sm:text-lg">
           {question}
         </span>
         <span
@@ -52,7 +52,7 @@ export default function FAQItem({ question, answer, index = 0 }) {
             transition={{ duration: 0.35, ease: easePremium }}
             className="overflow-hidden"
           >
-            <p className="border-t border-slate-100/80 px-7 pb-6 pt-4 leading-[1.7] text-slate-600">
+            <p className="border-t border-slate-100/80 px-7 pb-6 pt-4 leading-[1.7] text-slate-600 dark:border-slate-700/80 dark:text-slate-300">
               {answer}
             </p>
           </motion.div>

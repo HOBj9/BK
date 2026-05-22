@@ -11,7 +11,7 @@ export default function ContentPageBody({
   image,
   sections,
   sectionsColumns = '3',
-  introClassName = 'mx-auto max-w-3xl text-center text-lg text-slate-600',
+  introClassName = 'mx-auto max-w-3xl text-center text-lg text-slate-600 dark:text-slate-300',
 }) {
   const { isLoading: pageLoading } = usePageLoading();
   const introLoading = useCardReveal(pageLoading ? 0 : 0);

@@ -18,16 +18,16 @@ export default function Process() {
             <li key={step.step} className="relative">
               {index < processSteps.length - 1 && (
                 <span
-                  className="absolute left-8 top-16 hidden h-0.5 w-[calc(100%-2rem)] bg-brand-200 lg:block"
+                  className="absolute left-8 top-16 hidden h-0.5 w-[calc(100%-2rem)] bg-brand-200 dark:bg-brand-800 lg:block"
                   aria-hidden
                 />
               )}
               <div className="flex flex-col items-start">
-                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-brand-600 to-brand-800 text-2xl font-bold text-white shadow-xl shadow-brand-900/25 ring-4 ring-brand-100">
+                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-brand-600 to-brand-800 text-2xl font-bold text-white shadow-xl shadow-brand-900/25 ring-4 ring-brand-100 dark:ring-brand-900/50">
                   {step.step}
                 </span>
-                <h3 className="mt-6 text-lg font-bold text-slate-900">{step.title}</h3>
-                <p className="mt-2 leading-relaxed text-slate-600">{step.description}</p>
+                <h3 className="mt-6 text-lg font-bold text-slate-900 dark:text-slate-100">{step.title}</h3>
+                <p className="mt-2 leading-relaxed text-slate-600 dark:text-slate-300">{step.description}</p>
               </div>
             </li>
           ))}

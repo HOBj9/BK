@@ -1,46 +1,46 @@
 @layer components {
   .heading-display {
-    @apply font-bold tracking-tight text-balance text-slate-900;
+    @apply font-bold tracking-tight text-balance text-slate-900 dark:text-slate-50;
     font-size: clamp(2.5rem, 6vw, 4rem);
     line-height: 1.08;
     letter-spacing: -0.02em;
   }
 
   .heading-1 {
-    @apply text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl;
+    @apply text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl lg:text-5xl;
     line-height: 1.12;
     letter-spacing: -0.02em;
   }
 
   .heading-2 {
-    @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl;
+    @apply text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-3xl lg:text-4xl;
     line-height: 1.15;
     letter-spacing: -0.015em;
   }
 
   .heading-3 {
-    @apply text-xl font-bold text-slate-900 sm:text-2xl;
+    @apply text-xl font-bold text-slate-900 dark:text-slate-100 sm:text-2xl;
     line-height: 1.25;
   }
 
   .heading-4 {
-    @apply text-lg font-bold text-slate-900;
+    @apply text-lg font-bold text-slate-900 dark:text-slate-100;
   }
 
   .body-lg {
-    @apply text-lg leading-[1.7] text-slate-600;
+    @apply text-lg leading-[1.7] text-slate-600 dark:text-slate-300;
   }
 
   .body-base {
-    @apply text-base leading-[1.65] text-slate-600;
+    @apply text-base leading-[1.65] text-slate-600 dark:text-slate-300;
   }
 
   .body-sm {
-    @apply text-sm leading-relaxed text-slate-500;
+    @apply text-sm leading-relaxed text-slate-500 dark:text-slate-400;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-600 sm:text-sm;
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400 sm:text-sm;
   }
 
   .eyebrow-light {
@@ -49,7 +49,7 @@
 
   .eyebrow::before {
     content: '';
-    @apply h-px w-8 bg-brand-400/60;
+    @apply h-px w-8 bg-brand-400/60 dark:bg-brand-500/50;
   }
 
   .eyebrow-light::before {

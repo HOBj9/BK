@@ -18,8 +18,8 @@ function ContentSectionCard({ section, index }) {
   return (
     <motion.div variants={staggerItem}>
       <Card className="h-full" hover={false}>
-        <h3 className="text-lg font-bold text-slate-900">{section.title}</h3>
-        <p className="mt-3 whitespace-pre-line leading-relaxed text-slate-600">
+        <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">{section.title}</h3>
+        <p className="mt-3 whitespace-pre-line leading-relaxed text-slate-600 dark:text-slate-300">
           {section.description}
         </p>
       </Card>

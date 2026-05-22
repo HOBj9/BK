@@ -33,7 +33,7 @@ export default function SectionHeading({
       {description && (
         <p
           className={`mt-5 max-w-2xl text-lg leading-[1.7] ${
-            light ? 'text-slate-300' : 'text-slate-600'
+            light ? 'text-slate-300' : 'text-slate-600 dark:text-slate-300'
           } ${align === 'center' ? 'mx-auto' : ''}`}
         >
           {description}

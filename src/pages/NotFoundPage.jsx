@@ -20,8 +20,8 @@ export default function NotFoundPage() {
       <PageSection className="flex min-h-[60vh] items-center">
         <div className="text-center">
           <p className="text-8xl font-bold text-brand-200">404</p>
-          <h1 className="mt-4 text-3xl font-bold text-slate-900">Page introuvable</h1>
-          <p className="mx-auto mt-4 max-w-md text-slate-600">
+          <h1 className="mt-4 text-3xl font-bold text-slate-900 dark:text-slate-100">Page introuvable</h1>
+          <p className="mx-auto mt-4 max-w-md text-slate-600 dark:text-slate-300">
             La page que vous recherchez n&apos;existe pas ou a été déplacée. En cas
             d&apos;urgence plomberie, contactez-nous directement.
           </p>

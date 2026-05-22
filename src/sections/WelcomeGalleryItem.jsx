@@ -21,7 +21,7 @@ export default function WelcomeGalleryItem({ item, index }) {
 
   return (
     <motion.figure variants={staggerItem}>
-      <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800/90">
         <LazyImage
           src={item.image}
           alt={item.alt}

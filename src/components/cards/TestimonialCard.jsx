@@ -32,13 +32,13 @@ export default function TestimonialCard({ testimonial, index = 0 }) {
             />
           ))}
         </div>
-        <blockquote className="flex-1 leading-[1.7] text-slate-700">
+        <blockquote className="flex-1 leading-[1.7] text-slate-700 dark:text-slate-300">
           &ldquo;{testimonial.text}&rdquo;
         </blockquote>
-        <footer className="mt-6 border-t border-slate-100 pt-5">
+        <footer className="mt-6 border-t border-slate-100 pt-5 dark:border-slate-700">
           <cite className="not-italic">
-            <p className="font-bold text-slate-900">{testimonial.name}</p>
-            <p className="mt-0.5 text-sm text-slate-500">{testimonial.location}</p>
+            <p className="font-bold text-slate-900 dark:text-slate-100">{testimonial.name}</p>
+            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">{testimonial.location}</p>
           </cite>
         </footer>
       </Card>

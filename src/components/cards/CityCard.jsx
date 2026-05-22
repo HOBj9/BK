@@ -26,14 +26,14 @@ export default function CityCard({ city, index = 0 }) {
             <MapPin className="h-5 w-5" aria-hidden />
           </div>
           <div>
-            <h3 className="text-lg font-bold tracking-tight text-slate-900">{city.name}</h3>
-            <p className="mt-0.5 text-sm text-slate-500">{city.region}</p>
+            <h3 className="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">{city.name}</h3>
+            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">{city.region}</p>
           </div>
         </div>
-        <p className="mt-5 line-clamp-2 leading-relaxed text-slate-600">{city.description}</p>
+        <p className="mt-5 line-clamp-2 leading-relaxed text-slate-600 dark:text-slate-300">{city.description}</p>
         <Link
           to={ROUTES.CITY(city.slug)}
-          className="mt-6 inline-flex items-center gap-2 font-semibold text-brand-700 transition-all duration-300 hover:gap-3 hover:text-brand-900"
+          className="mt-6 inline-flex items-center gap-2 font-semibold text-brand-700 transition-all duration-300 hover:gap-3 hover:text-brand-900 dark:text-brand-300 dark:hover:text-brand-200"
         >
           Voir les services
           <ArrowRight className="h-4 w-4" aria-hidden />

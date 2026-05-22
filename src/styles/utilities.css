@@ -42,8 +42,12 @@
 
   /* Premium card surface */
   .card-premium {
-    @apply relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-7;
+    @apply relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-7 dark:border-slate-700/60 dark:bg-slate-800/90;
     box-shadow: 0 4px 24px -6px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+  }
+
+  .dark .card-premium {
+    box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
   .card-premium-hover {
@@ -51,8 +55,12 @@
   }
 
   .card-premium-hover:hover {
-    @apply -translate-y-1.5 border-brand-300/40;
+    @apply -translate-y-1.5 border-brand-300/40 dark:border-brand-500/40;
     box-shadow: 0 24px 48px -12px rgba(3, 105, 161, 0.18), 0 8px 16px -8px rgba(15, 23, 42, 0.06);
+  }
+
+  .dark .card-premium-hover:hover {
+    box-shadow: 0 24px 48px -12px rgba(14, 165, 233, 0.15), 0 8px 16px -8px rgba(0, 0, 0, 0.25);
   }
 
   /* Glassmorphism */
@@ -65,16 +73,16 @@
   }
 
   .glass-nav {
-    @apply border-b border-white/60 bg-white/75 shadow-[0_8px_32px_-8px_rgba(15,23,42,0.08)] backdrop-blur-xl backdrop-saturate-150;
+    @apply border-b border-white/60 bg-white/75 shadow-[0_8px_32px_-8px_rgba(15,23,42,0.08)] backdrop-blur-xl backdrop-saturate-150 dark:border-slate-700/50 dark:bg-slate-900/80 dark:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.4)];
   }
 
   /* Section backgrounds */
   .bg-section-muted {
-    @apply bg-linear-to-b from-slate-50 to-white;
+    @apply bg-linear-to-b from-slate-50 to-white dark:from-slate-900/80 dark:to-slate-950;
   }
 
   .bg-section-alt {
-    @apply bg-linear-to-b from-white via-slate-50/50 to-white;
+    @apply bg-linear-to-b from-white via-slate-50/50 to-white dark:from-slate-950 dark:via-slate-900/60 dark:to-slate-950;
   }
 
   .bg-hero {

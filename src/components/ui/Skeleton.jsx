@@ -16,7 +16,7 @@ export default function Skeleton({ className = '', rounded = 'rounded-lg', ...pr
       role="status"
       aria-hidden
       animate={pulse}
-      className={`relative overflow-hidden bg-slate-200 ${rounded} ${className}`}
+      className={`relative overflow-hidden bg-slate-200 dark:bg-slate-700/80 ${rounded} ${className}`}
       {...props}
     >
       <motion.span

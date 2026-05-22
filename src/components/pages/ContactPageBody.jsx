@@ -33,8 +33,8 @@ export default function ContactPageBody({ infoSections }) {
             </div>
           ) : (
             <>
-              <h2 className="text-2xl font-bold text-slate-900">Formulaire de contact</h2>
-              <p className="mt-2 text-slate-600">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Formulaire de contact</h2>
+              <p className="mt-2 text-slate-600 dark:text-slate-300">
                 Décrivez votre situation. Pour une urgence, appelez directement.
               </p>
               <div className="mt-8">

@@ -38,7 +38,7 @@ export default function FeaturedImage({
         skeletonClassName="aspect-video w-full rounded-none"
       />
       {caption && (
-        <p className="bg-slate-100 px-6 py-4 text-center text-sm font-medium text-slate-700">
+        <p className="bg-slate-100 px-6 py-4 text-center text-sm font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300">
           {caption}
         </p>
       )}

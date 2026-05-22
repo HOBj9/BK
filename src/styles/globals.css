@@ -3,16 +3,40 @@
 @import "./typography.css";
 @import "./utilities.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html.light {
+    color-scheme: light;
+  }
+
   body {
-    @apply bg-surface text-slate-800 antialiased;
+    @apply bg-surface text-slate-800 antialiased transition-colors duration-500;
     font-family: var(--font-sans);
-    background-image: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    background-image: linear-gradient(
+      180deg,
+      var(--app-bg-start) 0%,
+      var(--app-bg-end) 100%
+    );
     background-attachment: fixed;
+  }
+
+  :root {
+    --app-bg-start: #f8fafc;
+    --app-bg-end: #f1f5f9;
+  }
+
+  .dark {
+    --app-bg-start: #070b14;
+    --app-bg-end: #0f172a;
   }
 
   h1,
@@ -26,6 +50,10 @@
 
   ::selection {
     @apply bg-brand-200 text-brand-900;
+  }
+
+  .dark ::selection {
+    @apply bg-brand-700 text-brand-50;
   }
 
   img,

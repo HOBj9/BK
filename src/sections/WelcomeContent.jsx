@@ -16,10 +16,12 @@ export default function WelcomeContent() {
     <>
       {featured && (
         <PageSection variant="default" className="pt-8">
-          <p className="text-xl font-bold text-brand-700 md:text-4xl">{featured.title}</p>
-          <div className="mt-6 rounded-2xl bg-slate-100 p-4 md:p-8">
+          <p className="text-xl font-bold text-brand-700 dark:text-brand-300 md:text-4xl">
+            {featured.title}
+          </p>
+          <div className="mt-6 rounded-2xl bg-slate-100 p-4 dark:bg-slate-800/60 md:p-8">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <p className="max-w-xl text-sm leading-relaxed text-slate-700 md:text-2xl">
+              <p className="max-w-xl text-sm leading-relaxed text-slate-700 dark:text-slate-300 md:text-2xl">
                 {featured.description}
               </p>
               {featured.image && (
@@ -48,11 +50,13 @@ export default function WelcomeContent() {
             <motion.div
               key={section.title}
               variants={staggerItem}
-              className="flex flex-col gap-6 rounded-2xl bg-slate-200/60 p-6 md:flex-row md:items-center md:p-10"
+              className="flex flex-col gap-6 rounded-2xl bg-slate-200/60 p-6 dark:bg-slate-800/50 md:flex-row md:items-center md:p-10"
             >
               <div className="md:w-1/2">
-                <h2 className="text-2xl font-bold text-brand-700 md:text-5xl">{section.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-slate-700 md:text-lg">
+                <h2 className="text-2xl font-bold text-brand-700 dark:text-brand-300 md:text-5xl">
+                  {section.title}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300 md:text-lg">
                   {section.description}
                 </p>
               </div>
@@ -70,7 +74,7 @@ export default function WelcomeContent() {
 
       <PageSection variant="default">
         <FeaturedImage src={homePage.mainImage} alt={homePage.mainImageAlt} />
-        <p className="mt-10 text-center text-lg font-semibold text-slate-800 md:text-xl">
+          <p className="mt-10 text-center text-lg font-semibold text-slate-800 dark:text-slate-200 md:text-xl">
           {homePage.heroSubtitle}
         </p>
       </PageSection>

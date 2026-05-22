@@ -20,15 +20,15 @@ export default function ServiceDetailBody({ service }) {
             <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-700">
               <Icon className="h-7 w-7" aria-hidden />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900">Description du service</h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">{service.description}</p>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Description du service</h2>
+            <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">{service.description}</p>
 
-            <h3 className="mt-10 text-xl font-bold text-slate-900">
+            <h3 className="mt-10 text-xl font-bold text-slate-900 dark:text-slate-100">
               Ce que comprend l&apos;intervention
             </h3>
             <ul className="mt-4 space-y-3">
               {service.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3 text-slate-600">
+                <li key={feature} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" aria-hidden />
                   {feature}
                 </li>
@@ -38,7 +38,7 @@ export default function ServiceDetailBody({ service }) {
 
           <aside>
             <Card hover={false} className="sticky top-24">
-              <h3 className="text-lg font-bold text-slate-900">Avantages</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Avantages</h3>
               <ul className="mt-4 space-y-3">
                 {service.benefits.map((benefit) => (
                   <li

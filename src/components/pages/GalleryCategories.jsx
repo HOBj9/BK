@@ -15,7 +15,7 @@ function GalleryImage({ img, index }) {
   }
 
   return (
-    <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800/90">
       <LazyImage
         src={img.image}
         alt={img.alt}
@@ -23,7 +23,7 @@ function GalleryImage({ img, index }) {
         wrapperClassName="w-full"
         skeletonClassName="aspect-4/3 w-full rounded-none"
       />
-      <figcaption className="p-4 text-sm text-slate-600">{img.description}</figcaption>
+      <figcaption className="p-4 text-sm text-slate-600 dark:text-slate-300">{img.description}</figcaption>
     </figure>
   );
 }

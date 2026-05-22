@@ -61,3 +61,12 @@
   --radius-card: 1rem;
   --radius-button: 0.75rem;
 }
+
+/* Dark mode surface overrides */
+@layer theme {
+  .dark {
+    --color-surface: #0a0f1a;
+    --color-surface-muted: #111827;
+    --color-surface-card: #1e293b;
+  }
+}
