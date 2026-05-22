@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./typography.css";
+@import "./utilities.css";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-slate-800 antialiased;
+    font-family: var(--font-sans);
+    background-image: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Anchor targets — offset for sticky header */
+  section[id],
+  [id]:is(section, article, div) {
+    scroll-margin-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.35);
+    }
+    50% {
+      box-shadow: 0 10px 35px -5px rgba(220, 38, 38, 0.55);
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2.5s ease-in-out infinite;
+  }
+}
